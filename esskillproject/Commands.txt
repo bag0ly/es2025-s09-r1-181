@@ -1,0 +1,3 @@
+json-server --watch .\src\server\database.json --port 3000 //starts the server in the same port(necessery)
+npm start 
+
