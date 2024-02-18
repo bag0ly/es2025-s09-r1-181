@@ -65,7 +65,20 @@ app.get('/containers', (req, res) => {
   }
 });
 
-// Add more endpoints as needed
+// API endpoint to get containers by blockId
+app.get('/containers/:blockId', (req, res) => {
+  try {
+    const db = require('./src/server/database.json');
+    const blockId = req.params.blockId;
+    console.log('Requested blockId:', blockId); // Add this line for debugging
+    const containers = db.stocks.filter(container => container.blockId === blockId);
+    res.json(containers);
+  } catch (error) {
+    console.error('Error getting container data by blockId:', error.message);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

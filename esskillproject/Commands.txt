@@ -1,3 +1,17 @@
+npm i
+npm i axios
+npm i -g json-server
+
 json-server --watch .\src\server\database.json --port 3000 //starts the server in the same port(necessery)
 npm start 
 
+!! if JSON server doesn't start:
+- Windows powershell (Admin)
+- Get-ExecutionPolicy
+- if Restricted:
+  Set-ExecutionPolicy RemoteSigned
+NOTE: metod veri dangeroos
+
+or Ctrl+F: Powershell
+on this link:
+https://chat.openai.com/share/3ebdc9a8-ce56-41d2-9d81-c8a269c0a36c
