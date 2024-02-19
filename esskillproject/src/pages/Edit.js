@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom';
 
 
 function AddContainer() {
-    var moment = require('moment');
     const navigate = useNavigate();
     const today = new Date().toISOString().split('T')[0];
     const location = useLocation();
@@ -92,7 +91,7 @@ function AddContainer() {
                     <div className="form-group row pb-1">
                         <label className='d-flex justify-content-start p-1'>Arrived At:</label>
                         <div>
-                            <input type="date" defaultValue={moment(containerData.arrivedAt).format('YYYY-MM-DD')} name="arrivedAt" className="form-control" min="1900-01-01" max={today}/>
+                            <input type="date" defaultValue={new Date(containerData.arrivedAt).toISOString().split('T')[0]} name="arrivedAt" className="form-control" min="1900-01-01" max={today}/>
                         </div>
                     </div>
                     <div className='p-3'>

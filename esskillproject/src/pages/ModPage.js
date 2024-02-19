@@ -20,7 +20,7 @@ function ModPage() {
         };
 
         try {
-            const response = await axios.post('http://localhost:3000/containers', requestBody, {
+            const response = await axios.put('http://localhost:3000/containers', requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

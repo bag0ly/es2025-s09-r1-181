@@ -48,3 +48,7 @@ body{
   height: fit-content;
   max-height: fit-content;
 }
+
+.bt{
+  border: 1px solid white;
+}

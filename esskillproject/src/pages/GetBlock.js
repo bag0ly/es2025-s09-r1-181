@@ -3,7 +3,6 @@ import { NavLink, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 function GetContainer() {
-    var moment = require('moment');
     const location = useLocation();
 
     const id = location.pathname.split('/').pop(4);
@@ -40,8 +39,8 @@ function GetContainer() {
                         <div className="card-text" style={{ display: 'flex', flexDirection: 'row' , justifyContent: 'space-between', alignItems: 'center'}}>
                             <strong>arrivedAt :</strong>
                             <div className="text-center">
-                                {moment(containerData.arrivedAt).format('YYYY-MM-DD')}<br/>
-                                {moment(containerData.arrivedAt).format('HH:mm:ss')}
+                                {new Date(containerData.arrivedAt).toLocaleDateString()}<br/>
+                                {new Date(containerData.arrivedAt).toLocaleTimeString()}
                             </div>
                         </div>                    </div>
                     <div className="btn-group d-flex justify-content-center" role="group">

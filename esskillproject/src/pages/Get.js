@@ -42,7 +42,7 @@ function GetContainer() {
                             {containers.map(container => (
                                 <NavLink key={container.id} to={`/containers/${container.id}`} className="card-content"> 
                                     <div className='card-body'>
-                                        {container.id} 
+                                        {container.id}
                                     </div>
                                 </NavLink>
                             ))}

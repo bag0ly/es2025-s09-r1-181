@@ -57,14 +57,6 @@
       "arrivedAt": "2024-01-01T00:00:00.000Z"
     },
     {
-      "id": "BJMP5174125",
-      "blockId": 1,
-      "bayNum": 3,
-      "stackNum": 4,
-      "tierNum": 1,
-      "arrivedAt": "2024-02-19"
-    },
-    {
       "id": "FRBB7711828",
       "blockId": 4,
       "bayNum": 2,
@@ -103,14 +95,6 @@
       "stackNum": 4,
       "tierNum": 1,
       "arrivedAt": "2024-01-05T00:00:00.000Z"
-    },
-    {
-      "id": "HIDH6302421",
-      "blockId": 1,
-      "bayNum": 4,
-      "stackNum": 3,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-03T00:00:00.000Z"
     },
     {
       "id": "CFXO6298440",
@@ -169,14 +153,6 @@
       "arrivedAt": "2024-01-04T00:00:00.000Z"
     },
     {
-      "id": "ACDV7770422",
-      "blockId": 1,
-      "bayNum": 2,
-      "stackNum": 4,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-03T00:00:00.000Z"
-    },
-    {
       "id": "CDPH8853608",
       "blockId": 2,
       "bayNum": 4,
@@ -207,22 +183,6 @@
       "stackNum": 3,
       "tierNum": 1,
       "arrivedAt": "2024-01-03T00:00:00.000Z"
-    },
-    {
-      "id": "ELDL1593070",
-      "blockId": 1,
-      "bayNum": 5,
-      "stackNum": 4,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-03T00:00:00.000Z"
-    },
-    {
-      "id": "LYOL8321215",
-      "blockId": 1,
-      "bayNum": 2,
-      "stackNum": 2,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-04T00:00:00.000Z"
     }
   ]
 }
