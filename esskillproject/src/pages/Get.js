@@ -34,18 +34,21 @@ function GetContainer() {
             {isFetchPending ? (<div className="spinner-border"></div>) : (
                 <div>
                     {groupedContainers.map(([blockId, containers]) => (
-                        <div key={blockId} className="card col-sm-3 d-inline-block m-1 p-2">
-                            <div className="card-body">
-                                    <h2 style={{ textAlign: 'center' }}>Block {blockId}</h2>
-                                    {containers.map(container => (
-                                        <NavLink key={container.id} to={`/containers/${container.id}`} className="card-content"> 
-                                            <div className='card-body'>
-                                                {container.id} 
-                                            </div>
-                                        </NavLink>
-                                    ))}
-                                </div>
+                        <div key={blockId} className="card col-sm-4 d-inline-block m-1 p-2">
+                        <div className='card-header' style={{ overflowY: 'auto', maxHeight: '20%'}}>
+                            <h2 style={{ textAlign: 'center' }}> Block {blockId}</h2>
                         </div>
+                        <div className="card-body" style={{ overflowY: 'auto', maxHeight: '85%'}}>
+                            {containers.map(container => (
+                                <NavLink key={container.id} to={`/containers/${container.id}`} className="card-content"> 
+                                    <div className='card-body'>
+                                        {container.id} 
+                                    </div>
+                                </NavLink>
+                            ))}
+                        </div>
+                    </div>
+                    
                     ))}
                 </div>
             )}

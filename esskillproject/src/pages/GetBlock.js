@@ -3,6 +3,7 @@ import { NavLink, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 function GetContainer() {
+    var moment = require('moment');
     const location = useLocation();
 
     const id = location.pathname.split('/').pop(4);
@@ -30,16 +31,21 @@ function GetContainer() {
         <div className="container d-flex justify-content-center p-5 m-auto text-center content bg-ivory">
             {isFetchPending || !containerData.id ? (<div className="spinner-border"></div>) : (
                 <div className="card p-3 w-50">
-                    <div className="card-body">
-                        <h5 className="card-title">{containerData.id}</h5>
-                        <p className="card-text">blockId : {containerData.blockId}</p>
-                        <p className="card-text">bayNumber : {containerData.bayNum}</p>
-                        <p className="card-text">stackNumber : {containerData.stackNum}</p>
-                        <p className="card-text">tierNumber : {containerData.tierNum}</p>
-                        <p className="card-text">arrivedAt : {containerData.arrivedAt}</p>
-                    </div>
+                    <div className="card-body single">
+                        <h5 className="card-title mb-3">{containerData.id}</h5>
+                        <p className="card-text"><strong>blockId :</strong> {containerData.blockId}</p>
+                        <p className="card-text"><strong>bayNumber :</strong> {containerData.bayNum}</p>
+                        <p className="card-text"><strong>stackNumber :</strong> {containerData.stackNum}</p>
+                        <p className="card-text"><strong>tierNumber :</strong> {containerData.tierNum}</p>
+                        <div className="card-text" style={{ display: 'flex', flexDirection: 'row' , justifyContent: 'space-between', alignItems: 'center'}}>
+                            <strong>arrivedAt :</strong>
+                            <div className="text-center">
+                                {moment(containerData.arrivedAt).format('YYYY-MM-DD')}<br/>
+                                {moment(containerData.arrivedAt).format('HH:mm:ss')}
+                            </div>
+                        </div>                    </div>
                     <div className="btn-group d-flex justify-content-center" role="group">
-                        <NavLink to={`/mod-container/${containerData.id}`} className="p-1" >
+                        <NavLink to={`/edit/${containerData.id}`} className="p-1" >
                             <button type="button" className="btn btn-warning"><i className="bi bi-pencil-square"></i> Módosítás</button>
                         </NavLink>
                         <NavLink to={`/`} className={`p-1`}>

@@ -79,6 +79,27 @@ app.get('/containers/:id', (req, res) => {
   }
 });
 
+// API endpoint to modify a container by Id
+app.put('/containers/:id', (req, res) => {
+  try {
+    const db = JSON.parse(fs.readFileSync('./src/server/database.json', 'utf8'));
+    const id = req.params.id;
+    const newContainerData = req.body;
+
+    let container = db.stocks.find(container => container.id === id);
+    if (!container) {
+      res.status(404).json({ error: 'Container not found' });
+    } else {
+      Object.assign(container, newContainerData);
+      fs.writeFileSync('./src/server/database.json', JSON.stringify(db, null, 2));
+      res.json(container);
+    }
+  } catch (error) {
+    console.error('Error modifying container data:', error.message);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

@@ -1,14 +1,36 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 
 function AddContainer() {
+    var moment = require('moment');
     const navigate = useNavigate();
     const today = new Date().toISOString().split('T')[0];
+    const location = useLocation();
+
+
+    const id = location.pathname.split('/').pop(4);
+    const [containerData, setContainerData] = useState([]);
+    const [isFetchPending, setFetchPending] = useState(false);
+
+    useEffect(() => {
+        setFetchPending(true);
+        axios.get(`http://localhost:3000/containers/${id}`)
+            .then(response => {
+                setContainerData(response.data);
+            })
+            .catch(error => console.log(error))
+            .finally(() => {
+                setFetchPending(false);
+            });
+    }, [id]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        
+
         const formData = new FormData(event.target);
         const requestBody = {
             id: formData.get('id'),
@@ -18,9 +40,8 @@ function AddContainer() {
             tierNum: parseInt(formData.get('tierNum')),
             arrivedAt: formData.get('arrivedAt')
         };
-
         try {
-            const response = await axios.post('http://localhost:3000/containers', requestBody, {
+            const response = await axios.put(`http://localhost:3000/containers/${id}`, requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -34,46 +55,48 @@ function AddContainer() {
     return (
         <div className="container d-flex justify-content-center p-5 m-auto text-center content bg-ivory">
             <div className="card add p-5 content bg-whitesmoke text-center">
-                <h2 className='mb-3'>New container</h2>
+                <h2 >Edit container:</h2>
+                <h2 className='mb-3'>{containerData.id}</h2>
+
                 <form onSubmit={handleSubmit}>
                 <div className="form-group row pb-1">
                         <label className='d-flex justify-content-start p-1'>Container ID:</label>
                         <div>
-                            <input type="text" name="id" className="form-control" />
+                            <input type="text" defaultValue={containerData.id} name="id" className="form-control" />
                         </div>
                     </div>
                     <div className="form-group row pb-1">
                         <label className='d-flex justify-content-start p-1'>Block ID:</label>
                         <div>
-                            <input type="number" name="blockId" className="form-control" />
+                            <input type="number" defaultValue={containerData.blockId} name="blockId" className="form-control" />
                         </div>
                     </div>
                     <div className="form-group row pb-1">
                         <label className='d-flex justify-content-start p-1'>Bay Number:</label>
                         <div>
-                            <input type="number" name="bayNum" className="form-control" min="1" max="5"/>
+                            <input type="number" defaultValue={containerData.bayNum} name="bayNum" className="form-control" min="1" max="5"/>
                         </div>
                     </div>
                     <div className="form-group row pb-1">
                         <label className='d-flex justify-content-start p-1'>Stack Number:</label>
                         <div>
-                            <input type="number" name="stackNum" className="form-control" min="1" max="5"/>
+                            <input type="number" defaultValue={containerData.stackNum} name="stackNum" className="form-control" min="1" max="5"/>
                         </div>
                     </div>
                     <div className="form-group row pb-1">
                         <label className='d-flex justify-content-start p-1'>Tier Number:</label>
                         <div>
-                            <input type="number" name="tierNum" className="form-control" min="1" max="5"/>
+                            <input type="number" defaultValue={containerData.tierNum} name="tierNum" className="form-control" min="1" max="5"/>
                         </div>
                     </div>
                     <div className="form-group row pb-1">
                         <label className='d-flex justify-content-start p-1'>Arrived At:</label>
                         <div>
-                            <input type="date" name="arrivedAt" className="form-control" min="1900-01-01" max={today}/>
+                            <input type="date" defaultValue={moment(containerData.arrivedAt).format('YYYY-MM-DD')} name="arrivedAt" className="form-control" min="1900-01-01" max={today}/>
                         </div>
                     </div>
                     <div className='p-3'>
-                        <button type="submit" className="btn btn-primary">Add container</button>
+                        <button type="submit" className="btn btn-primary">Edit container</button>
                     </div>
                 </form>
             </div>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-do
 import Get from './pages/Get';
 import AddContainer from './pages/Add';
 import GetBlock from './pages/GetBlock';
+import Edit from './pages/Edit';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/add" element={<AddContainer />} />
         <Route path="/containers/:Id" element={<GetBlock />} />
         <Route path="/" element={<Get />} />
+        <Route path="edit/:Id" element={<Edit />} />
       </Routes>
     </Router>
   );
