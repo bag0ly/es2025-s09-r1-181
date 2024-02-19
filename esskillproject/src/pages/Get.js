@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function GetContainer() {
+    const { id } = useParams();
     const [containerData, setContainerData] = useState([]);
     const [isFetchPending, setFetchPending] = useState(false);
 
     useEffect(() => {
         setFetchPending(true);
-        axios.get("http://localhost:3000/containers")
+        axios.get(`http://localhost:3000/containers`)
             .then(response => {
                 setContainerData(response.data);
             })
@@ -18,32 +19,32 @@ function GetContainer() {
             });
     }, []);
 
-    // Grouping containers by blockId
-    const groupedContainers = containerData.reduce((acc, container) => {
+    // Grouping and sorting containers by blockId
+    const groupedContainers = Object.entries(containerData.reduce((acc, container) => {
         const blockId = container.blockId;
         if (!acc[blockId]) {
             acc[blockId] = [];
         }
         acc[blockId].push(container);
         return acc;
-    }, {});
+    }, {})).sort((a, b) => a[0] - b[0]);
 
     return (
         <div className="p-5 m-auto text-center content bg-ivory">
             {isFetchPending ? (<div className="spinner-border"></div>) : (
                 <div>
-                    {Object.keys(groupedContainers).map(blockId => (
+                    {groupedContainers.map(([blockId, containers]) => (
                         <div key={blockId} className="card col-sm-3 d-inline-block m-1 p-2">
-                            <NavLink to={`/block/${blockId}`} className="card-content">
-                                <div className="card-body">
+                            <div className="card-body">
                                     <h2 style={{ textAlign: 'center' }}>Block {blockId}</h2>
-                                    <ul>
-                                        {groupedContainers[blockId].map(container => (
-                                            <li key={container.id}>{container.id}</li>
-                                        ))}
-                                    </ul>
+                                    {containers.map(container => (
+                                        <NavLink key={container.id} to={`/containers/${container.id}`} className="card-content"> 
+                                            <div className='card-body'>
+                                                {container.id} 
+                                            </div>
+                                        </NavLink>
+                                    ))}
                                 </div>
-                            </NavLink>
                         </div>
                     ))}
                 </div>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function AddContainer() {
+function ModPage() {
     const navigate = useNavigate();
     const today = new Date().toISOString().split('T')[0];
 
@@ -81,4 +81,4 @@ function AddContainer() {
     );
 }
 
-export default AddContainer;
+export default ModPage;

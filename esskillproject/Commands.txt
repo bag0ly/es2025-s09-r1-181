@@ -10,6 +10,9 @@ npm start
 - Get-ExecutionPolicy
 - if Restricted:
   Set-ExecutionPolicy RemoteSigned
+  
+  // set it back later
+  Set-ExecutionPolicy Restricted
 NOTE: metod veri dangeroos
 
 or Ctrl+F: Powershell

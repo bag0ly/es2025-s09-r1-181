@@ -25,14 +25,6 @@
       "arrivedAt": "2024-01-05T00:00:00.000Z"
     },
     {
-      "id": "UXUB7754585",
-      "blockId": 1,
-      "bayNum": 5,
-      "stackNum": 3,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-05T00:00:00.000Z"
-    },
-    {
       "id": "XOJA3489960",
       "blockId": 2,
       "bayNum": 2,
@@ -63,14 +55,6 @@
       "stackNum": 3,
       "tierNum": 1,
       "arrivedAt": "2024-01-01T00:00:00.000Z"
-    },
-    {
-      "id": "ZFXT8956117",
-      "blockId": 1,
-      "bayNum": 5,
-      "stackNum": 2,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-03T00:00:00.000Z"
     },
     {
       "id": "BJMP5174125",

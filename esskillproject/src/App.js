@@ -7,27 +7,27 @@ import GetBlock from './pages/GetBlock';
 function App() {
   return (
     <Router>
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark mx-auto">
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav mx-auto">
-                    <li className="nav-item">
-                        <NavLink to={`/`} className="nav-link">
-                            All
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to={`/add`} className="nav-link">
-                            Add container
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <Routes>
-            <Route path="/" element={<Get />} />
-            <Route path="/add" element={<AddContainer />} />
-            <Route path="/block/:blockId" element={<GetBlock />} />
-        </Routes>
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mx-auto">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <NavLink to={`/`} className="nav-link">
+                All
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to={`/add`} className="nav-link">
+                Add container
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <Routes>
+        <Route path="/add" element={<AddContainer />} />
+        <Route path="/containers/:Id" element={<GetBlock />} />
+        <Route path="/" element={<Get />} />
+      </Routes>
     </Router>
   );
 }
