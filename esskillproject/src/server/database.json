@@ -1,46 +1,6 @@
 {
   "containers": [
     {
-      "id": "SQXJ2228345",
-      "blockId": 4,
-      "bayNum": 4,
-      "stackNum": 2,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-02T00:00:00.000Z"
-    },
-    {
-      "id": "CVQP7448977",
-      "blockId": 4,
-      "bayNum": 4,
-      "stackNum": 3,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-01T00:00:00.000Z"
-    },
-    {
-      "id": "FRBB7711828",
-      "blockId": 4,
-      "bayNum": 2,
-      "stackNum": 3,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-03T00:00:00.000Z"
-    },
-    {
-      "id": "NUYO4998391",
-      "blockId": 4,
-      "bayNum": 3,
-      "stackNum": 2,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-05T00:00:00.000Z"
-    },
-    {
-      "id": "LXGH8186543",
-      "blockId": 4,
-      "bayNum": 3,
-      "stackNum": 4,
-      "tierNum": 1,
-      "arrivedAt": "2024-01-03T00:00:00.000Z"
-    },
-    {
       "id": "AMEA0813127",
       "blockId": 3,
       "bayNum": 5,
@@ -90,7 +50,7 @@
     {
       "blockId": 1,
       "bayNum": 1,
-      "stackNum": 4,
+      "stackNum": 3,
       "tierNum": 2,
       "arrivedAt": "2024-02-20",
       "id": "DPTY70293094"

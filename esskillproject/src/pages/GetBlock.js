@@ -45,13 +45,13 @@ function GetContainer() {
                         </div>                    </div>
                     <div className="btn-group d-flex justify-content-center" role="group">
                         <NavLink to={`/edit/${containerData.id}`} className="p-1" >
-                            <button type="button" className="btn btn-warning"><i className="bi bi-pencil-square"></i> Módosítás</button>
+                            <button type="button" className="btn btn-warning"><i className="bi bi-pencil-square"></i> Edit</button>
                         </NavLink>
                         <NavLink to={`/`} className={`p-1`}>
-                            <button onClick={Handle_Delete} type="button" className="btn btn-danger"><i className="bi bi-trash3"></i> Törlés</button>
+                            <button onClick={Handle_Delete} type="button" className="btn btn-danger"><i className="bi bi-trash3"></i> Delete</button>
                         </NavLink>
                         <NavLink to={`/`} className="p-1">
-                            <button className="btn btn-secondary"><i className="bi bi-arrow-return-left"></i> Vissza</button>
+                            <button className="btn btn-secondary"><i className="bi bi-arrow-return-left"></i> Back</button>
                         </NavLink>
                     </div>
                 </div>)}

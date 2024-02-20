@@ -140,7 +140,7 @@ function EditContainer() {
                                         </div>
                                 </div>
                                 <div className='p-3'>
-                                    <button type="submit" className="btn btn-primary">Add container</button>
+                                    <button type="submit" className="btn btn-primary">Confirm edit</button>
                                 </div>
                         </form>
                     </div>
