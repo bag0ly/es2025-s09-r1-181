@@ -55,7 +55,7 @@ function Search() {
                 <div className="d-flex flex-wrap justify-content-center align-items-stretch">
                     {groupedContainers.map(([blockId, containers]) => (
                         <div key={blockId} className="card col-sm-4 d-inline-block m-1 p-2" style={{ width: 'fit-content' }}>
-                            <div className='card-header' style={{ overflowY: 'auto', maxHeight: '20%'}}>
+                            <div className='card-header' style={{ overflowY: 'hidden', maxHeight: '20%'}}>
                                 <h2 style={{ textAlign: 'center' }}> Block {blockId}</h2>
                             </div>
                             <div className="card-body" style={{ overflowY: 'auto', maxHeight: '85%'}}>
