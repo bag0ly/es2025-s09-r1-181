@@ -50,14 +50,22 @@
     {
       "blockId": 1,
       "bayNum": 1,
-      "stackNum": 3,
-      "tierNum": 2,
+      "stackNum": 2,
+      "tierNum": 3,
       "arrivedAt": "2024-02-20",
       "id": "DPTY70293094"
     },
     {
       "id": "IYVR44841571",
       "blockId": 2,
+      "bayNum": 1,
+      "stackNum": 1,
+      "tierNum": 1,
+      "arrivedAt": "2024-02-20"
+    },
+    {
+      "id": "PFJN21635433",
+      "blockId": 1,
       "bayNum": 1,
       "stackNum": 1,
       "tierNum": 1,

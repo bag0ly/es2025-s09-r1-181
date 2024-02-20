@@ -177,7 +177,7 @@ function AddContainer() {
                                 <div className="form-group row pb-1">
                                     <label className='d-flex justify-content-start p-1'>Block ID:</label>
                                         <div>
-                                            <input type="number" name="blockId" className="form-control" min="1" value={selectedBlock} onChange={handleBlockChange} required/>
+                                            <input type="number" name="blockId" className="form-control" min="1" max="4" value={selectedBlock} onChange={handleBlockChange} required/>
                                         </div>
                                 </div>
                                 <div className="form-group row pb-1">
