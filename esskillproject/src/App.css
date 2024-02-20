@@ -44,11 +44,16 @@ body{
   justify-content: space-between;
 }
 
-.card.add{
+.card.add {
   height: fit-content;
   max-height: fit-content;
 }
 
 .bt{
-  border: 1px solid white;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.containerBlock{
+  width: fit-content;
+  max-width: fit-content;
 }
