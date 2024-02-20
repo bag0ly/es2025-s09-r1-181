@@ -30,7 +30,7 @@ function App() {
         <Route path="/add" element={<AddContainer />} />
         <Route path="/containers/:Id" element={<GetBlock />} />
         <Route path="/" element={<Get />} />
-        <Route path="edit/:Id" element={<Edit />} />
+        <Route path="edit/:containerId" element={<Edit />} />
       </Routes>
     </Router>
   );
